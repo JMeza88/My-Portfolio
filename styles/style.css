@@ -1,12 +1,29 @@
+body{
+background-color: rgba(28, 42, 73, 1);
+color: white;
 
+}
+
+header{
+	border-bottom: 3px solid;
+}
 
 ul{
 	margin:0;
+	text-align: right;
 
 }
 
 li {
 display: inline-block;
 
+
 }
 
+a:hover {
+color: white;
+}
+
+a:link, a:visited {
+color: red;
+}
