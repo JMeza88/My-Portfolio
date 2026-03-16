@@ -1,98 +1,201 @@
-body{
-background-color: rgba(28, 42, 73, 1);
-color: white;
-margin: auto;
-max-width: 1100px;
-padding: 10px;
-
+/* Base Styles & Layout */
+/*V2- 03-16-2026*/
+body {
+    background-color: rgba(28, 42, 73, 1); /* Kept your great dark blue! */
+    color: #f4f4f9; /* Slightly softer white for better reading */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 900px; /* Slightly narrower to keep lines of text from getting too long */
+    padding: 30px 20px;
+    line-height: 1.6; /* Increased for readability */
 }
 
-
-header{
-	border-bottom: 3px solid;
+/* Typography & Headings */
+h1, h2, h3 {
+    color: #ffffff;
 }
 
-h1{
-	font-size: 30px ;
-	margin: 2px 0 2px 0;
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-
-li {
-font size: 10px;
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #4a5a80; /* Subtle underline for section headers */
+    padding-bottom: 8px;
+    margin-top: 1.5em;
 }
 
-
-nav h1{
-	font-size: 40px;
-	margin: 0 auto;
-	text-align: center;
-
+h3 {
+    font-size: 1.4rem;
+    color: #64ffda; /* Accent color for subheadings */
 }
 
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5em;
+}
 
-nav ul{
-	margin: 0;
-	text-align: right;
-	font-weight: bold;
-	margin-bottom: 3px;
-	position: relative;
+/* Links */
+a {
+    color: #64ffda; /* Swapped red for a modern, high-contrast cyan */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Navigation */
+header {
+    margin-bottom: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4a5a80;
+    padding-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Spaces out the buttons */
 }
 
 nav li {
-display: inline-block;
-font-size: 15px;
-background-color: #dee7ef;
-border-radius: 12px;
-font-style: italic;
-
+    display: inline-block;
 }
 
-a {
-	margin: 5px;
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle button background */
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-a:link, a:visited {
-color: red;
+nav a:hover {
+    background-color: #64ffda;
+    color: rgba(28, 42, 73, 1); /* Flips to dark blue on hover */
+    text-decoration: none;
 }
 
-
-a:hover {
-color: white;
+/* Structural Elements */
+hr {
+    border: 0;
+    height: 1px;
+    background: #4a5a80;
+    margin: 50px 0;
 }
 
-p{
-font-size:16px;
-margin: 0 0 2px 0;
-line-height: 1.2;
-font-family: "Arial", sans-serif;
-font-style: normal;
-
+ul {
+    font-size: 1.1rem;
+    margin-bottom: 1.5em;
 }
 
-p img{
-	max-height: 300px;
-	max-width:250px;
-	float: right;
-
+li {
+    margin-bottom: 8px;
 }
 
-footer{
-text-align: center;
-margin: 40px;
+/* Images */
+img {
+    max-width: 100%; /* Ensures image never overflows its container */
+    height: auto;
+    border-radius: 8px; /* Softens the edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a professional drop shadow */
+    margin-top: 10px;
+    display: block;
 }
 
-footer li{
-	margin: 3px;
-	display: inline;
-	font-weight: bold;
-    font-size: 20px;
-    border-bottom: 1px solid;
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #8a9bbd;
 }
 
-.family{
-overflow: auto;
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
+footer li {
+    font-weight: bold;
+    font-size: 1rem;
+}
 
+/* --- Interactive Project Cards --- */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle transparent background */
+    border: 1px solid #4a5a80;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Highlights slightly when hovered */
+}
+
+/* The clickable header part */
+.project-card summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none; /* Hides the default browser arrow */
+}
+
+/* Hides default arrow in Safari/Chrome */
+.project-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-card summary h3 {
+    margin: 0;
+    color: #64ffda;
+}
+
+/* The Plus/Cross icon */
+.project-card .icon {
+    font-size: 1.5rem;
+    color: #8a9bbd;
+    transition: transform 0.3s ease;
+}
+
+/* Rotates the '+' into an 'x' when the card is open */
+.project-card[open] .icon {
+    transform: rotate(45deg); 
+    color: #ffffff;
+}
+
+/* The hidden content that drops down */
+.project-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #4a5a80;
+    animation: fadein 0.4s ease-in-out;
+}
+
+/* Smooth fade-in for the text/gif */
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
